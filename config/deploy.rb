@@ -13,14 +13,14 @@ set :use_sudo, false
 # where each part is on the same domain.
 
 # Location
-set :deploy_to, "/var/apps/#{application}"
+set :deploy_to, "/usr2/aybarra/deployed/#{application}"
 
 # Deployment details
 set :user,   "aybarra"      unless exists?(:user)
 set :password, "aA187759!"
 set :runner, user          unless exists?(:runner)
-set :server_type, :thin    unless exists?(:server_type)
-set :deploy_port, 9000     unless exists?(:deploy_port)
+set :server_type, :mongrel    unless exists?(:server_type)
+set :deploy_port, 8000     unless exists?(:deploy_port)
 set :cluster_instances, 3  unless exists?(:cluster_instances)
 set :use_sqlite3, true     unless exists?(:use_sqlite)
 set :keep_releases, 3      unless exists?(:keep_releases)
